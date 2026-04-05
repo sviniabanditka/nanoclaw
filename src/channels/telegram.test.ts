@@ -29,6 +29,11 @@ vi.mock('../group-folder.js', () => ({
   resolveGroupFolderPath: vi.fn((folder: string) => `/tmp/test-groups/${folder}`),
 }));
 
+// Mock transcription (used by voice handler)
+vi.mock('../transcription.js', () => ({
+  transcribeAudio: vi.fn(() => Promise.resolve(null)),
+}));
+
 
 // --- Grammy mock ---
 
